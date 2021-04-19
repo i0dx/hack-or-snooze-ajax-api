@@ -34,3 +34,18 @@ function updateNavOnLogin() {
   $navLogOut.show();
   $navUserProfile.text(`${currentUser.username}`).show();
 }
+
+/** When the user clicks submit, retrieve form data and send to server */
+function navSubmit(evt){
+  console.debug("navSubmit", evt);
+  let storyFrame = {
+   title: $("#form-title").val(),
+   author: $("#form-author").val(),
+   url: $("#form-url").val()
+  }
+  console.log(storyFrame);
+  document.querySelector("#story-form").reset();
+  storyList.addStory(currentUser, storyFrame);
+}
+
+$navSubmit.on("click", navSubmit);

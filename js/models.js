@@ -1,7 +1,10 @@
 "use strict";
-
+const testObj = {
+  title: "Hi Jerry!!",
+  author: "A fellow student",
+  url: "https://springboard.com"
+}
 const BASE_URL = "https://hack-or-snooze-v3.herokuapp.com";
-
 /******************************************************************************
  * Story: a single story in the system
  */
@@ -73,8 +76,15 @@ class StoryList {
    * Returns the new Story instance
    */
 
-  async addStory( /* user, newStory */) {
+  async addStory(user, storyFrame ) {
     // UNIMPLEMENTED: complete this function!
+    let response = await axios.post(`${BASE_URL}/stories`, {
+      token: user.loginToken, 
+      story: storyFrame
+    });
+    let newStory = new Story(response.data.story);
+    console.log("added! " + newStory);
+    return newStory;
   }
 }
 

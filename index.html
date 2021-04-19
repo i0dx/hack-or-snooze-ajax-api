@@ -38,6 +38,7 @@
     <a class="nav-link" href="#" id="nav-all">Hack or Snooze</a>
   </div>
   <div class="nav-right">
+    <a class="nav-link" href="#" id="nav-submit"><b>Submit</b></a>
     <a class="nav-link" href="#" id="nav-login">login/signup</a>
     <a class="nav-link" href="#" id="nav-user-profile"></a>
     <a class="hidden" id="nav-logout" href="#"><small>(logout)</small></a>
@@ -50,6 +51,11 @@
   <!-- loading message (removed by JS after stories loaded) -->
   <div id="stories-loading-msg">Loading&hellip;</div>
 
+  <form id="story-form">
+    <input id="form-title" placeholder="Title">
+    <input id="form-author" placeholder="Author">
+    <input id="form-url" placeholder="url">
+  </form>
   <!-- List of all stories -->
   <ol id="all-stories-list" class="stories-list"></ol>
 
